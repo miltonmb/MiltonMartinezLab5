@@ -12,6 +12,10 @@ matriz::matriz(int rows , int cols){
 		m[i] = new double[fila];
 	}
 }
+
+matriz::~matriz(){
+	cout << "Borrado";
+}
 const matriz matriz::operator+(const matriz& r)const{
 	matriz result(fila, columna);
     for (int i = 0; i < fila; i++) {
