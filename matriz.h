@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include <stdio>
+#include <stdio.h>
 #include <string.h>
 
 using namespace std;
@@ -8,7 +8,7 @@ using namespace std;
 class matriz{
 	private:
 		int columna,fila;
-		double **matriz;
+		double **m;
 
 	public:
     	matriz();
@@ -23,4 +23,5 @@ class matriz{
   	  	void BorrarMatriz();
     	void llenadoUsuario();
     	void Transpuesta();	
+    	void imprimir();
 };
