@@ -19,9 +19,11 @@ class matriz{
     	const matriz operator+ (const matriz&)const;
     	const matriz operator- (const matriz&)const;
     	const matriz operator* (const matriz&)const;
+    	const matriz& operator-();
+    	const matriz operator++();
+    	const matriz operator--();
 
   	  	void BorrarMatriz();
     	void llenadoUsuario();
-    	void Transpuesta();	
     	void imprimir();
 };

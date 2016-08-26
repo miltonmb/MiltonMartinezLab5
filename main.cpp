@@ -6,6 +6,7 @@ using std::vector;
 using namespace std;
 int main(){
 		vector<matriz*> matrices;
+		vector<matriz*> matrices1;
 		int opcion = 0;
 		char r = 'S';
 		while(r == 's'|| r == 'S'){
@@ -21,14 +22,14 @@ int main(){
 					cin >> columna;
 					cout << endl;
 					matriz* m = new matriz(fila,columna);
-					matrices.push_back(m);
+					matrices1.push_back(m);
 					cout << "Agregado\n";
 					break;
 				}
 				case 1:{
 					int matriz_eleccion = 0;
 					int matriz_eleccion2 = 0;
-					for (int i = 0; i < matrices.size(); ++i){
+					for (int i = 0; i < matrices1.size(); ++i){
 						cout<<i<<endl;
 					}
 					cout<<"Elija la matriz uno: ";
@@ -37,7 +38,7 @@ int main(){
 					cout << "Elija la matriz dos: ";
 					cin >> matriz_eleccion2;
 					cout << endl;
-					matriz suma = *matrices[matriz_eleccion] + *matrices[matriz_eleccion2];
+					matriz suma = *matrices1[matriz_eleccion] + *matrices1[matriz_eleccion2];
 					matriz* nueva = new matriz(suma);
 					nueva -> imprimir();
 					matrices.push_back(nueva);
@@ -46,17 +47,12 @@ int main(){
 				}
 				case 2:{
 					int matriz_eleccion3 = 0;
-					int matriz_eleccion4 = 0;
-					for (int i = 0; i < matrices.size(); ++i){
+					for (int i = 0; i < matrices1.size(); ++i){
 						cout<<i<<endl;
 					}
 					cout<<"Elija la matriz uno: ";
 					cin >>matriz_eleccion3;
-					cout << endl;
-					cout << "Elija la matriz dos: ";
-					cin >> matriz_eleccion4;
-					cout << endl;
-					matriz resta_unaria = *matrices[matriz_eleccion3] - *matrices[matriz_eleccion4];
+					matriz resta_unaria= -*matrices1[matriz_eleccion3];
 					matriz* nueva2 = new matriz(resta_unaria);
 					nueva2 -> imprimir();
 					matrices.push_back(nueva2);
@@ -65,7 +61,7 @@ int main(){
 				case 3:{
 					int matriz_eleccion5 = 0;
 					int matriz_eleccion6 = 0;
-					for (int i = 0; i < matrices.size(); ++i){
+					for (int i = 0; i < matrices1.size(); ++i){
 						cout<<i<<endl;
 					}
 					cout<<"Elija la matriz uno: ";
@@ -74,16 +70,41 @@ int main(){
 					cout << "Elija la matriz dos: ";
 					cin >> matriz_eleccion6;
 					cout << endl;
-					matriz resta = *matrices[matriz_eleccion5] - *matrices[matriz_eleccion6];
+					matriz resta = *matrices1[matriz_eleccion5] - *matrices1[matriz_eleccion6];
 					matriz* nueva3 = new matriz(resta);
 					nueva3 -> imprimir();
 					matrices.push_back(nueva3);
 					break;
 				}
 				case 4:{
+					int matriz_eleccion7 = 0;
+					int matriz_eleccion8 = 0;
+					for (int i = 0; i < matrices1.size(); ++i){
+						cout<<i<<endl;
+					}
+					cout<<"Elija la matriz uno: ";
+					cin >>matriz_eleccion7;
+					cout << endl;
+					cout << "Elija la matriz dos: ";
+					cin >> matriz_eleccion8;
+					cout << endl;
+					matriz mult = *matrices1[matriz_eleccion7] * *matrices1[matriz_eleccion8];
+					matriz* nueva4 = new matriz(mult);
+					nueva4 -> imprimir();
+					matrices.push_back(nueva4);
 					break;
 				}
 				case 5:{
+					int matriz_eleccion9 = 0;
+					for (int i = 0; i < matrices1.size(); ++i){
+						cout<<i<<endl;
+					}
+					cout<<"Elija la matriz uno: ";
+					cin >>matriz_eleccion9;
+					matriz trans=  *matrices1[matriz_eleccion9];
+					matriz* n_trans = new matriz(++trans);
+					n_trans -> imprimir();
+					matrices.push_back(n_trans);
 					break;
 				}
 				case 6:{
@@ -97,22 +118,44 @@ int main(){
 				}
 				case 9:{
 					int eleccion = 0;
-					for (int i = 0; i < matrices.size(); ++i){
+					for (int i = 0; i < matrices1.size(); ++i){
 						cout<<i<<endl;
 					}
 					cout<<"Elija la matriz a llenar: ";
+					cout << endl;
 					cin >>eleccion;
-					matrices[eleccion]->llenadoUsuario();
+					matrices1[eleccion]->llenadoUsuario();
 					break;
 				}
 				case 10:{
-					int eleccion2 = 0;
-					for (int i = 0; i < matrices.size(); ++i){
-						cout<<i<<endl;
+					int el = 0;
+					cout << "1.Imprimir del vector de resultados\n2.Imprimir del vector Recolector";
+					cin >> el;
+					cout << endl;
+					switch(el){
+						case 1:{
+							int eleccion2 = 0;
+							for (int i = 0; i < matrices.size(); ++i){
+								cout<<i<<endl;
+							}
+							cout<<"Elija la matriz a imprimir: ";
+							cin >>eleccion2;
+							cout << endl;
+							matrices[eleccion2]->imprimir();
+							break;
+						}
+						case 2:{
+							int eleccion3 = 0;
+							for (int i = 0; i < matrices1.size(); ++i){
+								cout<<i<<endl;
+							}
+							cout<<"Elija la matriz a imprimir: ";
+							cin >>eleccion3;
+							cout << endl;
+							matrices1[eleccion3]->imprimir();
+							break;
+						}						
 					}
-					cout<<"Elija la matriz a imprimir: ";
-					cin >>eleccion2;
-					matrices[eleccion2]->llenadoUsuario();
 					break;
 				}
 

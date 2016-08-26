@@ -17,7 +17,7 @@ matriz::matriz(const matriz &m){
 }
 
 matriz::~matriz(){
-	cout << "Borrado";
+	cout << "Borrado\n";
 }
 const matriz matriz::operator+(const matriz& r)const{
 	matriz result(fila, columna);
@@ -51,6 +51,23 @@ const matriz matriz::operator* (const matriz& r)const{
         }
     }
     return result;
+}
+const matriz& matriz::operator-(){
+	for (int i = 0; i < fila; ++i){
+		for (int j = 0; j < columna; ++j){
+			m[i][j]*=-1;
+		}
+	}
+	return *this;
+}
+const matriz matriz::operator++(){
+		matriz r(columna, fila);
+    for (int i = 0; i < columna; i++) {
+        for (int j = 0; j < fila; j++) {
+            r.m[i][j] = m[j][i];
+        }
+    }
+    return r;
 }
 
 
