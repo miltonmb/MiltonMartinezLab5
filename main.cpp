@@ -52,14 +52,21 @@ int main(){
 				case 9:{
 					int eleccion = 0;
 					for (int i = 0; i < matrices.size(); ++i){
-						cout<<i;
+						cout<<i<<endl;
 					}
-					cout<<"Elija la matriz a imprimir: ";
+					cout<<"Elija la matriz a llenar: ";
 					cin >>eleccion;
-					matrices[eleccion]->imprimir();
+					matrices[eleccion]->llenadoUsuario();
 					break;
 				}
 				case 10:{
+					int eleccion2 = 0;
+					for (int i = 0; i < matrices.size(); ++i){
+						cout<<i<<endl;
+					}
+					cout<<"Elija la matriz a imprimir: ";
+					cin >>eleccion2;
+					matrices[eleccion2]->llenadoUsuario();
 					break;
 				}
 
