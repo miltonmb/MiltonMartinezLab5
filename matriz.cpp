@@ -4,9 +4,9 @@
 #include "matriz.h"
 using namespace std;
 
-matriz::matriz(int rows , int cols){
+matriz::matriz(int filas , int cols){
 	columna = cols;
-	fila = rows;
+	fila = filas;
 	m = new double*[fila];
 	for (int i = 0; i < fila; i++) {
 		m[i] = new double[fila];
@@ -46,6 +46,7 @@ void matriz::imprimir(){
     }
     cout << endl << endl;
 }
+
 void matriz::llenadoUsuario(){
 	double m_ele = 0;
     for (int i = 0; i < fila; i++) {
