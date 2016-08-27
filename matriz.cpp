@@ -2,8 +2,10 @@
 #include <stdio.h>
 #include <string>
 #include "matriz.h"
-using namespace std;
+#include <sstream>
+using std::stringstream;
 
+using namespace std;
 matriz::matriz(int filas , int cols){
 	columna = cols;
 	fila = filas;
@@ -69,6 +71,57 @@ const matriz matriz::operator++(){
     }
     return r;
 }
+bool  matriz::operator==(matriz& r){
+	bool resultado = true;
+	if (r.fila != fila || r.columna != columna){
+		resultado=false;
+	}
+	else{
+		for (int i = 0; i < fila ; ++i){
+			for (int j = 0; j < columna; ++j){
+				if (m[i][j]==r.m[i][j]){
+					resultado==true;
+				}
+				else{
+					resultado=false;
+					break;
+				}
+			}
+			if (resultado==false){
+				break;
+			}
+		}
+	}
+
+	return resultado;
+}
+bool matriz::operator!=(matriz& r){
+	bool resultado = true;
+	if (r.fila != fila || r.columna != columna){
+		resultado=true;
+	}
+	else{
+		for (int i = 0; i < fila ; ++i){
+			for (int j = 0; j < columna; ++j){
+				if (m[i][j]!=r.m[i][j])
+				{
+					resultado==true;
+				}
+				else{
+					resultado=false;
+					break;
+				}
+			}
+			if (resultado==false)
+			{
+				break;
+			}
+		}
+	}
+
+	return resultado;
+}
+
 
 
 void matriz::imprimir(){

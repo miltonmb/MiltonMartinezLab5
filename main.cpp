@@ -108,9 +108,43 @@ int main(){
 					break;
 				}
 				case 6:{
+					for (int i = 0; i < matrices1.size(); ++i){
+						cout<<i<<endl;
+					}
+					int eleccion_ma = 0;
+					int eleccion_ma2 = 0;
+					cout<<"Elija la matriz uno: ";
+					cin >>eleccion_ma;
+					cout << endl;
+					cout << "Elija la matriz dos: ";
+					cin >> eleccion_ma2;
+					cout << endl;
+					if(*matrices1[eleccion_ma]==*matrices1[eleccion_ma]){
+						cout << "VERDADERO";
+					}else{
+						cout << "FALSO";
+					}
+
+					
 					break;
 				}
 				case 7:{
+					for (int i = 0; i < matrices1.size(); ++i){
+						cout<<i<<endl;
+					}
+					int eleccion_ma3 = 0;
+					int eleccion_ma4 = 0;
+					cout<<"Elija la matriz uno: ";
+					cin >>eleccion_ma3;
+					cout << endl;
+					cout << "Elija la matriz dos: ";
+					cin >> eleccion_ma4;
+					cout << endl;
+					if(*matrices1[eleccion_ma3]==*matrices1[eleccion_ma4]){
+						cout << "VERDADERO";
+					}else{
+						cout << "FALSO";
+					}
 					break;
 				}
 				case 8:{
