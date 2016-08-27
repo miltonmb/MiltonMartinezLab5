@@ -21,9 +21,9 @@ class matriz{
     	const matriz operator* (const matriz&)const;
     	const matriz& operator-();
     	const matriz operator++();
-    	const matriz operator--();
     	bool operator==(matriz&);
     	bool operator!=(matriz&);
+    	void operator--();
 
   	  	void BorrarMatriz();
     	void llenadoUsuario();

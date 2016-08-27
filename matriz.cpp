@@ -121,6 +121,18 @@ bool matriz::operator!=(matriz& r){
 
 	return resultado;
 }
+void matriz::operator--(){
+	double resultado = 0;
+	if (fila == 2 & columna==2){
+		resultado = (m[0][0]*m[1][1])-(m[1][1]*m[0][1]);
+	}
+	else if (fila == 3 & columna ==3){
+		resultado = m[0][0]*m[1][1]*m[2][2];
+		resultado += m[0][1]*m[1][2]*m[0][2];
+		resultado += m[0][2]*m[1][0]*m[2][1];	
+	}
+	cout<<"el resultado es: "<<resultado<<"\n";
+}
 
 
 

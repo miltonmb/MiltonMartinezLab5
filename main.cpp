@@ -140,7 +140,7 @@ int main(){
 					cout << "Elija la matriz dos: ";
 					cin >> eleccion_ma4;
 					cout << endl;
-					if(*matrices1[eleccion_ma3]==*matrices1[eleccion_ma4]){
+					if(*matrices1[eleccion_ma3]!=*matrices1[eleccion_ma4]){
 						cout << "VERDADERO";
 					}else{
 						cout << "FALSO";
@@ -148,6 +148,17 @@ int main(){
 					break;
 				}
 				case 8:{
+					for (int i = 0; i < matrices1.size(); ++i){
+						cout<<i<<endl;
+					}
+					int eleccion_d= 0;
+					cout << "elija la matriz uno: ";
+					cin >> eleccion_d;
+					cout << endl;
+					matriz x= *matrices1[eleccion_d];
+					matriz* det = new matriz(x);
+					det->imprimir();
+					matrices.push_back(det);
 					break;
 				}
 				case 9:{
@@ -195,5 +206,7 @@ int main(){
 
 			}
 		}
+		matrices1.clear();
+		matrices.clear();
 	return 0;
 }
